@@ -32,8 +32,23 @@ Ext.onReady(function() {
   var column02 = Ext.create({xtype: 'gridcolumn', text: 'Email', dataIndex: 'email', width: 200})
   var column03 = Ext.create({xtype: 'gridcolumn', text: 'Phone', dataIndex: 'phone', width: 200})
 
+  var column04 = Ext.create({xtype: 'gridcolumn',
+                  text: "dateField",
+                  dataIndex: "dateField",
+                  flex: 1,
+                  editable: true,
+                  editor: {
+                      xtype: 'datefield',
+                      allowBlank: true,
+                      format: 'm/d/Y'
+                  }
+                })
+
+
+
   grid.setData(data)
   grid.insertColumn(0,column01)
+  grid.insertColumn(0,column04)
   //grid.insertColumn(1,column02)
   //grid.insertColumn(2,column03)
 
